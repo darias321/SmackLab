@@ -58,6 +58,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// const apiRoutes = require("./routes/api-routes");
+// app.use(apiRoutes);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {

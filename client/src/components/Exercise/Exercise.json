@@ -1,16 +1,15 @@
-[ ["Back", "Plank", "Spiderman","Static Push Up", "Side Plank"],
-     ["Abs", "4-Count Bodybuilder","Human Flag", "Pull Up","Burpee"],
+[
+  ["Back", "Plank", "Spiderman", "Static Push Up", "Side Plank"],
 
-     ["Arms","Towel Curl", "Isometric Curl", "Muscle Up", "Ledge Curl"],
+  ["Abs", "4-Count Bodybuilder", "Human Flag", "Pull Up", "Burpee"],
 
-     ["Calves", "Calf Raise", "Donkey Calf Raise", "The Cliffhanger"],
+  ["Arms", "Towel Curl", "Isometric Curl", "Muscle Up", "Ledge Curl"],
 
-      ["Chest", "Bear Walk", "Hanging Dip", "Seated Dip"],
+  ["Calves", "Calf Raise", "Donkey Calf Raise", "The Cliffhanger"],
 
+  ["Chest", "Bear Walk", "Hanging Dip", "Seated Dip"],
 
-      ["Legs","Invisible Chair", "Pistol Squat", "Sumo Squat", "Sissy Squat"],
+  ["Legs", "Invisible Chair", "Pistol Squat", "Sumo Squat", "Sissy Squat"],
 
-
-    ["Shoulders" ,"Mountain Climber", "Arm Rotation", "Human Flag"]
-
+  ["Shoulders", "Mountain Climber", "Arm Rotation", "Human Flag"]
 ]
