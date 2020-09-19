@@ -120,15 +120,7 @@ class Store extends React.Component {
       <div className="bg">
         <Grid container className="About container" spacing={12}>
           <h2 className="weight800 font40 padding30">SMVCKLAB Store</h2>
-          {/* <p className="font12 padding5">
-            We are four students looking for a way to motivate working out
-            during COVID-19 requiring majority of us to shelter in place. One of
-            the best ways known to work has been to push others by smack
-            talking. Its a method proven to encourage one another that there's
-            always room for improvement. So TEAM 150% decided to offer a
-            community providing smack chats with trainers and other members as
-            well as fitness videos to workout with. Enjoy!
-          </p> */}
+
           <Grid className="swiper-container">
             <Swiper effect="overflow" {...params}>
               {storiesRender}
