@@ -10,7 +10,6 @@ import {
   Grid,
   Typography,
   makeStyles,
-  Container,
 } from "@material-ui/core";
 
 // CSS
@@ -47,7 +46,7 @@ export default function ContactUS() {
         justify="center"
       >
         <Grid item xs={12}>
-          <h2 className="weight800 text-white">Smack talk with us!</h2>
+          <h2 className="weight800">Smack talk with us!</h2>
           <p className="weight500 text-crimson">
             Not sure if this is the right method for you? Send us an email, a
             smacker will respond to you within a few smackable moments.

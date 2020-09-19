@@ -9,7 +9,6 @@ import Quiz from "./components/Quiz/";
 import Header from "./components/AppBar/index";
 import PrivateBar from "./components/AppBar/PrivateBar";
 import Footer from "./components/Footer";
-import Categories from "./components/Exercise/Categories";
 import ExercisesList from "./components/Exercise/ExerciseList";
 import Profile from "./components/Profile/Profile";
 import Contact from "./components/Pages/Contact";
@@ -18,7 +17,6 @@ import About from "./components/Pages/About";
 import Landing from "./components/Pages/Landing";
 import Calc from "./components/Calculator/index";
 import ChatBtn from "./components/ChatBtn/ChatBtn";
-// import Chat from "./components/Chat/Chat";
 
 import "./App.css";
 import PrivateRoute from "./handlers/PrivateRoute";
@@ -32,16 +30,13 @@ const App = () => {
     <Router>
       <div className="App">
         {!auth.isAuthenticated ? <Header /> : <PrivateBar />}
-        {/* <Header /> */}
         <Switch>
           {/* {!auth.isAuthenticated ? <Login /> : <Home />} */}
           <Route exact path="/" component={Landing} />
           <PrivateRoute exact path="/home" component={Home} />
           <PublicRoute exact path="/signup" component={SignUp} />
           <PublicRoute exact path="/login" component={Login} />
-          {/* <Route exact path="/chat" component={Chat} /> */}
           <PrivateRoute exact path="/quiz" component={Quiz} />
-          {/* <PrivateRoute exact path="/categories" component={Categories} /> */}
           <PrivateRoute exact path="/exercises" component={Test} />
           <Route exact path="/exercises/:muscles" component={ExercisesList} />
           <PrivateRoute exact path="/profile" component={Profile} />

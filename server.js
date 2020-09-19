@@ -46,17 +46,17 @@ app.use("/api-routes", ProfileRouter);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-app.options('*', cors());
+app.options("*", cors());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
-
-// const apiRoutes = require("./routes/api-routes");
-// app.use(apiRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

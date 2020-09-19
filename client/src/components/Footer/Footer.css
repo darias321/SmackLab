@@ -15,6 +15,13 @@
   flex-direction: column;
 }
 
+.footer-pos2 {
+  padding: 2em 2em 1em 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 #FooterLinks,
 .text-link,
 Link {

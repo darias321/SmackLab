@@ -1,52 +1,49 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
-import ReactPlayer from "react-player";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const API = 'AIzaSyDmw3fsSME-f_PHFez3Gd4gOVPNuz9b6TY';
+const API = process.env.REACT_APP_YTVKey;
 
 const Video = (props) => {
+  const [stateId, setId] = useState({ id: "" });
+  const [videoLink, setVideoLink] = useState({ link: [] });
+  const [state, setState] = useState({ id: [] });
 
-    const [stateId, setId] = useState({ id: "" });
-    const [videoLink, setVideoLink] = useState({ link: [] });
-    const [state, setState] = useState({ id: [] });
+  let links = [];
+  let arr = [];
 
-    let links = [];
-    let arr = [];
+  console.log(stateId);
 
-    console.log(stateId);
+  axios.get("/profile", (req, res) => {
+    const id = req.body.id;
+    setId({ id: id });
+  });
 
-    axios.get('/profile', (req, res) => {
-        const id = req.body.id;
-        setId({ id: id });
+  axios
+    .post("/uservideo", {
+      id: stateId.id,
+      link: videoLink.link,
+    })
+    .then((res) => {
+      console.log(res);
     });
 
-    axios.post("/uservideo", {
-        id: stateId.id,
-        link: videoLink.link,
-    }).then((res) => {
-        console.log(res);
-    })
+  const getVideo = () => {
+    axios
+      .get(
+        ` https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&key=${API}&q=${props.name}`
+      )
+      .then((res) => {
+        const id = console.log(res.data.items[0].id.videoId);
+        arr.push(id);
+        links.push(`https://www.youtube.com/watch?v=${id}`);
+      });
 
+    setState({ id: arr });
+    setVideoLink({ link: links });
+  };
 
-    const getVideo = () => {
-        axios.get(` https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&key=${API}&q=${props.name}`)
-            .then((res) => {
-                const id = console.log(res.data.items[0].id.videoId)
-                arr.push(id);
-                links.push(`https://www.youtube.com/watch?v=${id}`)
-            })
-
-        setState({ id: arr });
-        setVideoLink({ link: links });
-    }
-
-    useEffect(() => {
-        getVideo();
-    }, [])
-
-
-
-
-
-}
+  useEffect(() => {
+    getVideo();
+  }, []);
+};
 export default Video;

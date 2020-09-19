@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import { initialState, AuthReducer} from "../reducers/authReducer";
+import { initialState, AuthReducer } from "../reducers/authReducer";
 import axios from "axios";
 
 const authContext = createContext({});
@@ -9,23 +9,26 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const isLoggedIn = () => {
-      const token = localStorage.getItem('token');
-      setAuth({type: "USER_LOADING"})
+      const token = localStorage.getItem("token");
+      setAuth({ type: "USER_LOADING" });
       axios({
-        method: 'GET',
-        url: 'http://localhost:5000/api/users/verify',
-        headers: { 
+        method: "GET",
+        url: "api/users/verify", //add localhost:5000 if local
+        headers: {
           // "Access-Control-Allow-Headers": 'x-auth-token',
-          'x-auth-token': token, 
-        }
+          "x-auth-token": token,
+        },
       })
-      .then((response) => {
-        setAuth({ type: "LOGIN", payload: { user: response.data.user, token: response.data.token } });
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
+        .then((response) => {
+          setAuth({
+            type: "LOGIN",
+            payload: { user: response.data.user, token: response.data.token },
+          });
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
     };
     isLoggedIn();
   }, []);
@@ -39,8 +42,7 @@ const AuthProvider = ({ children }) => {
 };
 
 const useAuthContext = () => {
-  return React.useContext(authContext)
-}
+  return React.useContext(authContext);
+};
 
-
-export { AuthProvider, useAuthContext};
+export { AuthProvider, useAuthContext };

@@ -16,6 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
+import "./Profile.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,10 +56,10 @@ export default function RecipeReviewCard(props) {
   return (
     <Card className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={6} className="parentTitle">
+        <Grid item xs={6} className="parentTitle text-blk">
           <CardHeader
             avatar={<Avatar>{props.letter}</Avatar>}
-            title={<h3>{props.fullName}</h3>}
+            title={<h3 className="text-blk">{props.fullName}</h3>}
           />
         </Grid>
       </Grid>

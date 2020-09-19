@@ -6,11 +6,7 @@ const ProfileRouter = express.Router();
 // load Profile model
 const User = require("../models/User");
 const Profile = require("../models/Profile");
-// <<<<<<< master
-// const Video = require("../models/Video");
-// =======
-// const { db } = require("../models/Video");
-// >>>>>>> master
+const Video = require("../models/Video");
 
 // questions by user
 ProfileRouter.get("/profile", auth, function (req, res) {
@@ -29,7 +25,7 @@ ProfileRouter.get("/profile", auth, function (req, res) {
     })
     .catch((err) => {
       console.log(err);
-      return res.status(500).json({ msg: "db err" });
+      return res.status(500).json({ msg: "database err" });
     });
 });
 
@@ -61,8 +57,7 @@ ProfileRouter.post("/profile/populate", auth, async (req, res) => {
   });
 });
 
-
-ProfileRouter.post('/profile/uservideo', auth, async (req, res) => {
+ProfileRouter.post("/profile/uservideo", auth, async (req, res) => {
   const video = new Video({
     link: req.body.link,
   });
@@ -71,12 +66,11 @@ ProfileRouter.post('/profile/uservideo', auth, async (req, res) => {
     User.findById(user, (err, base) => {
       base.video.push(video);
       base.save((err, user) => {
-        if (err)
-          return res.send(err);
+        if (err) return res.send(err);
         res.json(user);
-      })
-    })
-  })
+      });
+    });
+  });
 });
 
 module.exports = ProfileRouter;

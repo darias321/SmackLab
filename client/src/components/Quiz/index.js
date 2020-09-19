@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Quiz from "./Quiz";
 import Result from "./Result";
-import quizQuestions from "../../api/quizQuestions";
+import quizQuestions from "./quizQuestions";
 import { PropTypes } from "react";
 
 // export default (props) => {

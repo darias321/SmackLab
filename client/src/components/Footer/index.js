@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid className="footerColor footer-pos" item xs={6} sm={3}>
+        <Grid className="footerColor footer-pos" item xs={6} sm={4}>
           <div className="text-color text-link">
             <p>
               <b>INFO</b>
@@ -40,8 +40,7 @@ const Footer = () => {
             </p>
           </div>
         </Grid>
-        <Grid className="footerColor footer-pos" item xs={1}></Grid>
-        <Grid item xs={4} sm={4} className="footerColor footer-pos">
+        <Grid item xs={12} sm={4} className="footerColor footer-pos2">
           <div id="Footer">
             <div className="text-color" id="FooterLinks">
               <p>
