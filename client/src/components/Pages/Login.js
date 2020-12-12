@@ -62,7 +62,7 @@ const Login = () => {
     return new Promise((resolve, reject) => {
       axios({
         method: "POST",
-        url: `http://localhost:5000/api/users/login`, //add http://localhost:5000 for speed.
+        url: `api/users/login`, //add http://localhost:5000 for speed.
         data: {
           email: state.email,
           password: state.password,

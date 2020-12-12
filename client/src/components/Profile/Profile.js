@@ -91,7 +91,7 @@ const Profile = () => {
     const token = localStorage.getItem("token");
     axios({
       method: "POST",
-      url: "http://localhost:5000/api-routes/profile/populate",
+      url: "api-routes/profile/populate",
       headers: { "x-auth-token": token },
       data: { answers: answerOptions },
     })

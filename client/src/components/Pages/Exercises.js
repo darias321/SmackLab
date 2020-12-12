@@ -121,7 +121,7 @@ const Exercises = () => {
   const [state, setState] = useState({ name: [], image: [] });
 
   const getExercises = (exercises) => {
-    window.location.href = `http://localhost:3000/exercises/${exercises.name}`;
+    window.location.href = `exercises/${exercises.name}`;
   };
 
   const getMuscles = () => {
